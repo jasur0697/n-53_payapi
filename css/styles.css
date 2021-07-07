@@ -1,0 +1,1230 @@
+@font-face {
+  font-family: 'Public Sans';
+  src: url('PublicSans-Regular.woff2') format('woff2'),
+      url('PublicSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  src: url('PublicSans-Bold.woff2') format('woff2'),
+      url('PublicSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('DMSerifDisplay-Regular.woff2') format('woff2'),
+      url('DMSerifDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --barlow-font: "Barlow", Arial, sans-serif;
+  --fraunces-font: "Fraunces", Arial, sans-serif;
+  --grey-color: #808397;
+  --white-color: #FFFFFF;
+  --black-color:#24303E;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1480px;  
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: var(--barlow-font);
+  background-color: #FEFCF7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Header */
+
+.wrapper {
+  background-image: url(../images/hero_mob.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 260px;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 105px;
+  padding: 32px 0;
+}
+
+.site-header__logo-link {
+  text-decoration: none;
+  display: block;
+  flex-shrink: 0;
+}
+
+.site-header__button {
+  background-color: transparent;
+  border: none;
+  background-image: url(../images/hamburger-btn.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.site-nav {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 23px;
+  right: 23px;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: auto;
+  background-color: white;
+  color: #83888F;
+}
+
+
+
+.site-header--open .site-header__button {
+  background-image: url(../images/hamburger-btn.svg);
+}
+
+.site-header--open .site-nav  {
+  display: block;
+}
+
+.site-header--open .triangle-bottomright {
+  display: block;
+}
+
+.site-nav__list {
+  list-style-type: none;
+  padding:0;
+  margin: 0;
+}
+
+.site-nav__link {
+  text-decoration: none;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.142857px;
+  color: #808397;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+}
+
+.site-nav__link:hover {
+  color: #333D4B;
+}
+
+.contact__link {
+  padding: 15px 30px;
+  font-family: var(--fraunces-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: -0.107143px;
+  text-transform: uppercase;
+  color: #24303E;
+  background-color: #FBD600;
+  border-radius: 28px;
+}
+
+.pointer__img {
+  position: absolute;
+  z-index: -1;
+  left:calc(50% - 10px);
+  top:calc(50% + 55px)
+}
+
+
+
+.triangle-bottomright {
+  display: none;
+  width: 0;
+  height: 0;
+  border-bottom: 24px solid white;
+  border-left: 24px solid transparent;
+  position: absolute;
+  top:  calc(54px);
+  right: calc(23px);
+}
+
+.site-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.hero-container {
+  text-align: center;
+}
+
+.hero-heading {
+  font-family: "Fraunces", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 6.25px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-bottom: 104px;
+}
+
+.hero-desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.8;
+  margin-bottom: 39px;
+  width: 279px;
+  color: #FEFCF7;
+  margin-top: 0;
+}
+
+.hero-link {
+  text-decoration: none;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #FEFCF7;
+  padding: 15px 31px;
+  display: inline-block;
+  border: 1px solid transparent;
+  background: #0E8784;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in;
+  padding: 15px 30px;
+}
+
+.hero-link:hover {
+  background-color: #66D2CF;
+}
+
+.grid-gallery__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand::before {
+  background-image: url(../images/hero-egg-mob.png);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 312px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.audience::before {
+  background-image: url(../images/mobpink.png);
+  content: "";
+  display: block;
+  width: 100%;
+  height:312px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.gallery__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 0;
+  background-color: white;
+
+}
+
+
+
+.gallery__heading {
+  margin: 0;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  letter-spacing: -0.228571px;
+  color: #24303E;
+  width: 327px;
+}
+
+.gallery__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #808397;
+  width: 327px;
+}
+
+
+.gallery__link {
+  font-family: "Fraunces" ;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #24303E;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  
+}
+
+.gallery__link::after {
+  content: "";
+  height:10px ;
+  width: 100%;
+  display: block;
+  background-color: #e4d376;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+  border-radius: 28px;
+  position: absolute;
+  z-index: 1;
+  bottom: 10%;
+}
+
+.gallery__link:hover::after {
+  background-color: #ffda09;
+}
+
+.gallery__fruits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 398px 24px 60px 24px;
+}
+
+.fruits__heading {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: -0.2px;
+
+}
+
+.fruits__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.114286px;
+  width: 84%;
+}
+
+.graphic__design {
+  color: #24554A;
+  background-image: url(../images/fruit1mob.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+.photography {
+  color: #052C3B;
+  background-image: url(../images/fruit2mob.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.testimonals__heading {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 4px;
+  color: #A7AAAD;
+  margin: 64px 0;
+}
+
+.clients__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0 24px;
+  margin: 0;
+}
+
+.clients__item  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.clients__item:not(:last-child) {
+  margin-bottom: 64px;
+}
+
+.clients__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #5B636D;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.emily::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  background-image: url(../images/tes_1.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  margin-bottom: 32px;
+}
+
+.thomas::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-image: url(../images/tes_3.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+
+}
+
+.jennie::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-image: url(../images/tes_2.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+}
+
+
+.clients__name {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #24303E;
+  margin: 0;
+  margin-bottom: 9px;
+}
+
+.clients__status {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: -0.1px;
+  color: #A7AAAD;
+  margin: 0;
+}
+
+
+@media only screen and (min-width: 540px) {
+  
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wrapper {
+    background-image: url(../images/hero_desk.png);
+    height: auto;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .pointer__img {
+    position: absolute;
+    z-index: -1;
+    left:calc(50% - 10px);
+    top:calc(50% + 20px)
+  }
+
+  .site-header__button {
+    display: none;
+    background-color: transparent;
+  }
+
+  .site-header__logo {
+    width: 170px;
+    height: 33px;
+  }
+
+  .site-nav {
+    display: block;
+    position: static;
+    z-index: 1;
+    top: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+  }
+
+  .site-nav {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--white-color);
+    background-color: transparent;
+  }
+
+  .site-nav__list {
+    list-style-type: none;
+    padding-top: 34px;
+
+  }
+  .site-nav__list {
+    font-family: "Barlow";
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .site-nav__link {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    color:  #FFFFFF;
+    letter-spacing: -0.128571px;
+  }
+
+  .contact__link {
+    padding: 15px 30px;
+    font-family: var(--fraunces-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.107143px;
+    text-transform: uppercase;
+    color: black;
+    background-color: white;
+    border-radius: 28px;
+  }
+
+  .contact__link:hover {
+    background-color: rgb(172, 225, 243);
+  }
+
+  .site-nav__item:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url(../images/hero-photo.jpg);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    height: auto;
+    margin-bottom: 144px;
+  }
+
+  .hero-container {
+    text-align: start;
+    width: 493px;
+    margin-left: 58px;
+  }
+
+  .hero-heading {
+    font-family: "Fraunces";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 48px;
+    color: #FEFCF7;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 180px;
+  }
+
+  .hero-desc {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+    color: #FEFCF7;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    width: 400px;
+  }
+
+
+  
+.grid-gallery__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  height: auto;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.gallery__content {
+  flex-grow: 0;
+  width: 50%;
+  height: auto;
+}
+
+.brand {
+  flex-direction: row-reverse;
+}
+
+.brand::before {
+  background-image: url(../images/hero-egg-desk.png);
+  content: "";
+  display: block;
+  width: 50%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.audience::before {
+  background-image: url(../images/grid_pink.jpg);
+  content: "";
+  display: block;
+  width: 50%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.gallery__fruits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 398px 24px 60px 24px;
+  width: 50%;
+}
+
+.fruits__heading {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: -0.2px;
+
+}
+
+.fruits__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.114286px;
+  width: 84%;
+}
+
+.graphic__design {
+  color: #24554A;
+  background-image: url(../images/fruit1mob.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
+}
+
+.photography {
+  color: #052C3B;
+  background-image: url(../images/fruit2mob.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
+}
+
+
+
+.clients__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0 24px;
+  margin: 0;
+}
+
+.clients__item  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.clients__item:not(:last-child) {
+  margin-bottom: 64px;
+}
+
+.clients__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #5B636D;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.emily::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  background-image: url(../images/tes_1.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  margin-bottom: 32px;
+}
+
+.thomas::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-image: url(../images/tes_3.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+
+}
+
+.jennie::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-image: url(../images/tes_2.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+}
+
+
+.clients__name {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #24303E;
+  margin: 0;
+  margin-bottom: 9px;
+}
+
+.clients__status {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: -0.1px;
+  color: #A7AAAD;
+  margin: 0;
+}
+
+
+
+
+}
+
+ 
+
+@media only screen and (min-width: 1075px) {
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url(../images/hero-photo.jpg);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    height: auto;
+    margin-bottom: 144px;
+  }
+
+  .hero-container {
+    text-align: start;
+    width: 493px;
+    margin-left: 58px;
+  }
+
+  .hero-heading {
+    font-family: "Fraunces";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 69px;
+    color: #FEFCF7;
+    margin-bottom:90px;
+    text-align: center;
+    letter-spacing: 8.75px;
+    text-transform: uppercase;
+  }
+
+  .hero-desc {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #FEFCF7;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    margin-top: 32px;
+    margin-bottom: 56px;
+    width: 445px;
+  }
+
+
+  .site-header__logo {
+    width: 170px;
+    height: 33px;
+  }
+
+  .wrapper {
+    background-image: url(../images/hero_desk.png);
+    min-width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .pointer__img {
+    position: absolute;
+    z-index: -1;
+    left:calc(50% - 10px);
+    top:calc(50% - 50px)
+  }
+
+
+    
+.grid-gallery__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  height: auto;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.gallery__content {
+  flex-grow: 0;
+  width: 50%;
+}
+
+.brand {
+  flex-direction: row-reverse;
+}
+
+.brand::before {
+  background-image: url(../images/hero-egg-desk@2x.png);
+  content: "";
+  display: block;
+  width: 50%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.audience::before {
+  background-image: url(../images/grid_pink.jpg);
+  content: "";
+  display: block;
+  width: 50%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery__fruits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 398px 24px 60px 24px;
+  width: 50%;
+}
+
+.fruits__heading {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: -0.2px;
+
+}
+
+.fruits__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: -0.114286px;
+  width: 84%;
+}
+
+.graphic__design {
+  color: #24554A;
+  background-image: url(../images/fruit1desk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center ;
+}
+
+.photography {
+  color: #052C3B;
+  background-image: url(../images/fruit2desk.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center ;
+}
+
+
+.clients__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clients__item  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 350px;
+}
+
+.clients__item:not(:last-child) {
+  margin-bottom: 0;
+  margin-right: 30px;
+}
+
+.clients__desc {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #5B636D;
+  margin: 0;
+  padding-bottom: 69px;
+ 
+}
+
+.emily::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  background-image: url(../images/tes_1.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  margin-bottom: 32px;
+}
+
+.thomas::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-image: url(../images/tes_3.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+
+}
+
+.jennie::before {
+  content: "";
+  width: 72px;
+  height: 72px;
+  display: block;
+  background-image: url(../images/tes_2.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 32px;
+}
+
+
+.clients__name {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.128571px;
+  color: #24303E;
+  margin: 0;
+  margin-bottom: 9px;
+}
+
+.clients__status {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: -0.1px;
+  color: #A7AAAD;
+  margin: 0;
+}
+
+
+
+
+
+}
+
+
+/* foooter */
+
+.footer {
+  margin-top: 183px;
+  background-color: 
+  #90D4C6;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 54px 0;
+  text-align: center;
+}
+
+.footer li {
+  list-style-type: none;
+  text-align: center;
+}
+
+.footer-nav__link {
+  font-family: "Barlow";
+  text-decoration: none;
+  color:  #458D7E;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.923077px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+}
+
+.footer-nav__link:hover {
+  color:  #FFFFFF;
+}
+
+.footer-nav__list {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0;
+  margin-bottom: 88px;
+}
+
+.footer-nav__item:not(:last-child) {
+  margin-right: 57px;
+}
+
+.footer-nav__link:hover {
+  color: #FEFCF7;
+}
+
+.socials__list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin:0;
+}
+
+.socials_item:not(:last-child) {
+  margin-right: 28px;
+}
+
+.svg-icons {
+  fill: #2C7566;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+}
+
+.svg-icons:hover {
+ fill: #FFFFFF;;
+}
+
