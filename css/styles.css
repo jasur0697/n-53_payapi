@@ -299,6 +299,8 @@ img {
 
 .partners__content {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .partners-info__content {
@@ -351,16 +353,21 @@ img {
 
 .brands__collection {
   width: 540px;
-  height: 105px;
+  height: 102px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .brands__imgs:not(:nth-child(3n)) {
  height: auto; 
  margin-right: 60px;
- 
+}
+
+.last__brand {
+  margin-left: 50px;
 }
 
 @media only screen and (min-width: 700px) {
