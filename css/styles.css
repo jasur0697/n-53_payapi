@@ -287,6 +287,81 @@ img {
 }
 
 
+.partners {
+  background-image:url(../images/partner-bg.png);
+  width:100%;
+  height: auto;
+  display: block;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.partners__content {
+  display: flex;
+}
+
+.partners-info__content {
+  height: 272px;
+  width: 445px;
+  margin:100px 0;
+  color: white;
+}
+
+.partners__heading {
+  font-family: "DM Serif Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.369231px;
+  color: #FBFCFE;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.partners__desc {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 28px;
+  color: #FBFCFE;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+  width: 445px;
+  margin-bottom: 32px;
+}
+
+.about__link {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: -0.115385px;
+  color: #FBFCFE;
+  padding: 15px 32px;
+  border: 1px solid #FBFCFE;
+  box-sizing: border-box;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.brands__collection {
+  width: 540px;
+  height: 105px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.brands__imgs:not(:nth-child(3n)) {
+ height: auto; 
+ margin-right: 60px;
+ 
+}
 
 @media only screen and (min-width: 700px) {
   
@@ -488,9 +563,8 @@ img {
     margin-bottom: 24px;
     position: absolute;
     z-index: 1;
-    left: calc(50% - 250px);
-    top: calc(50% + 180px);
-    right: 0;
+    top: calc(50% + 230px);
+    left: calc(50% + 80px );
     cursor: pointer;
   } 
 
